@@ -22,10 +22,10 @@ export default function SellerCTA({ onOpenSellerModal }) {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <button
               type="button"
-              onClick={onOpenSellerModal}
+           
               className="px-8 py-3.5 rounded-full bg-[#D5B779] hover:bg-[#be9d58] text-[#174C3C] font-bold text-sm sm:text-base transition-all shadow-md hover:shadow-lg active:scale-95"
             >
-              Become a Seller
+             <a href="https://multivendor-store-frontend-vendor.vercel.app/">Become a Seller</a> 
             </button>
             <a
               href="#about"

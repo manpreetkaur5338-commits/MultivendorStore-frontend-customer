@@ -72,25 +72,7 @@ export default function Hero({ onSearch }) {
           </p>
 
           {/* Hero Search Bar - Full-width on mobile, constrained on desktop */}
-          <form onSubmit={handleSearch} className="mt-5 sm:mt-6 w-full max-w-lg">
-            <div className="relative flex items-center shadow-xs rounded-full bg-white border border-[#E6E0D2] focus-within:border-[#174C3C] focus-within:ring-1 focus-within:ring-[#174C3C] transition-all">
-              <input
-                type="text"
-                value={localSearch}
-                onChange={(e) => setLocalSearch(e.target.value)}
-                placeholder="Search products, brands & sellers..."
-                className="w-full bg-transparent text-[#202824] placeholder-[#68736C]/70 text-xs sm:text-sm rounded-full pl-4 sm:pl-5 pr-24 sm:pr-28 py-2.5 sm:py-3.5 focus:outline-hidden"
-              />
-              <button
-                type="submit"
-                aria-label="Search catalog"
-                className="absolute right-1 sm:right-1.5 px-3.5 sm:px-5 py-1.5 sm:py-2.5 bg-[#174C3C] hover:bg-[#0f3429] text-white text-xs sm:text-sm font-semibold rounded-full transition shadow-xs flex items-center gap-1.5 cursor-pointer active:scale-95"
-              >
-                <Search className="h-3.5 w-3.5" />
-                <span>Search</span>
-              </button>
-            </div>
-          </form>
+          
 
           {/* CTA Buttons */}
           <div className="mt-5 sm:mt-6 flex flex-wrap items-center gap-2.5 sm:gap-4">
@@ -103,7 +85,7 @@ export default function Hero({ onSearch }) {
             </a>
 
             <a
-              href="#seller"
+              href="https://multivendor-store-frontend-vendor.vercel.app/"
               className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border-2 border-[#D5B779] bg-white/80 text-[#174C3C] text-xs sm:text-sm font-semibold hover:bg-[#D5B779]/20 transition-all active:scale-95 shadow-2xs min-h-[40px]"
             >
               <span>Become a Seller</span>
