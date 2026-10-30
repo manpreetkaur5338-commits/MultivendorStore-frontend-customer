@@ -8,6 +8,7 @@ import {
   RotateCcw,
 } from "lucide-react";
 
+
 export default function Hero({ onSearch }) {
   const [localSearch, setLocalSearch] = useState("");
 

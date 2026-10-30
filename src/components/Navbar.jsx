@@ -33,7 +33,7 @@ export default function Navbar({
     { label: "Shop All", href: "#products" },
     { label: "Collections", href: "#categories" },
     { label: "Why MarketNest", href: "#benefits" },
-    { label: "Become a Seller", href: "#seller" },
+    { label: "Become a Seller", href: "https://multivendor-store-frontend-vendor.vercel.app/" },
   ];
 
   // Close mobile menu on Escape key
