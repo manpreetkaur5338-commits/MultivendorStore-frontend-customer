@@ -12,6 +12,7 @@ import OrdersModal from "./components/OrdersModal";
 import ProductDetailModal from "./components/ProductDetailModal";
 import AuthModal from "./components/AuthModal";
 import OrderSuccessModal from "./components/OrderSuccessModal";
+import { API_BASE_URL } from "./config/api";
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -90,7 +91,7 @@ export default function App() {
   const fetchProducts = useCallback(async () => {
     try {
       setLoadingProducts(true);
-      const url = new URL("http://localhost:5000/api/products");
+      const url = new URL(`${API_BASE_URL}/api/products`);
       if (selectedCategory && selectedCategory !== "all") {
         url.searchParams.set("category", selectedCategory);
       }
@@ -124,7 +125,7 @@ export default function App() {
     const fetchCategories = async () => {
       try {
         setLoadingCategories(true);
-        const res = await fetch("http://localhost:5000/api/categories");
+        const res = await fetch(`${API_BASE_URL}/api/categories`);
         if (res.ok) {
           const json = await res.json();
           if (json.data && Array.isArray(json.data) && json.data.length > 0) {
@@ -147,7 +148,7 @@ export default function App() {
     if (!activeToken) return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/orders/my-orders", {
+      const res = await fetch(`${API_BASE_URL}/api/orders/my-orders`, {
         headers: { Authorization: `Bearer ${activeToken}` },
       });
       if (res.ok) {
@@ -219,7 +220,7 @@ export default function App() {
     const activeToken = token || localStorage.getItem("token");
     if (!activeToken) throw new Error("Please log in first");
 
-    const res = await fetch(`http://localhost:5000/api/orders/${orderId}/cancel`, {
+    const res = await fetch(`${API_BASE_URL}/api/orders/${orderId}/cancel`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

@@ -10,4 +10,13 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] }),
     tailwindcss(),
   ],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://multivendorstore-backend-3.onrender.com',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 })
